@@ -50,7 +50,6 @@ class EqualizerApp:
 
         self._apply_styles()
         self._build_ui()
-        self._setup_plots()
 
         # Kick off the 30 fps update loop
         self.root.after(33, self._update_plots)
