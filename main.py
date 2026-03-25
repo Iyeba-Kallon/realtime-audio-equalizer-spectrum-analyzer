@@ -1,6 +1,6 @@
 import tkinter as tk
-from src.audio_engine import AudioEngine
-from src.gui import EqualizerApp
+from audio_engine import AudioEngine
+from gui import EqualizerApp
 import sys
 
 def main():

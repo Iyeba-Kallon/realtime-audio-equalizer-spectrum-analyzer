@@ -1,6 +1,6 @@
 import numpy as np
 from scipy.signal import sosfilt, sosfreqz
-from .constants import SAMPLE_RATE, CHUNK_SIZE
+from constants import SAMPLE_RATE, CHUNK_SIZE
 
 # Normalization factor: converts raw int16 amplitudes to [-1.0, 1.0] range
 _INT16_MAX = 32768.0
