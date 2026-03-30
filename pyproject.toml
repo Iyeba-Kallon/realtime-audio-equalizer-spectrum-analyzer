@@ -1,0 +1,22 @@
+[project]
+name = "speqtr"
+version = "0.1.0"
+description = "Real-time audio equalizer and spectrum analyzer"
+readme = "README.md"
+authors = [
+    { name = "Iyeba Kallon", email = "iyebalphakallon@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "numpy",
+    "scipy",
+    "pyaudio",
+    "sounddevice",
+]
+
+[project.scripts]
+speqtr = "speqtr:main"
+
+[build-system]
+requires = ["uv_build>=0.11.2,<0.12.0"]
+build-backend = "uv_build"
