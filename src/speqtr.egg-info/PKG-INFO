@@ -1,12 +1,12 @@
 Metadata-Version: 2.4
 Name: speqtr
-Version: 0.1.0
+Version: 0.1.1
 Summary: Professional-grade, high-fidelity real-time audio equalizer and spectrum analyzer
 Author-email: Iyeba Kallon <iyebalphakallon@gmail.com>
+License-Expression: MIT
 Project-URL: Homepage, https://github.com/Iyeba-Kallon/realtime-audio-equalizer-spectrum-analyzer
 Project-URL: Bug Tracker, https://github.com/Iyeba-Kallon/realtime-audio-equalizer-spectrum-analyzer/issues
 Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Classifier: Topic :: Multimedia :: Sound/Audio :: Analysis
 Classifier: Topic :: Multimedia :: Sound/Audio :: Editors

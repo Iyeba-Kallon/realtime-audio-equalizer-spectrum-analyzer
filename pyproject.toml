@@ -4,16 +4,16 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "speqtr"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="Iyeba Kallon", email="iyebalphakallon@gmail.com" },
 ]
 description = "Professional-grade, high-fidelity real-time audio equalizer and spectrum analyzer"
 readme = "README.md"
+license = "MIT"
 requires-python = ">=3.10"
 classifiers = [
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: Multimedia :: Sound/Audio :: Analysis",
     "Topic :: Multimedia :: Sound/Audio :: Editors",
