@@ -7,7 +7,7 @@ from matplotlib.figure import Figure
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 from matplotlib import style
 
-from constants import (
+from speqtr.constants import (
     EQ_BANDS, SAMPLE_RATE, CHUNK_SIZE,
     MIN_FREQ, MAX_FREQ, MIN_DB, MAX_DB,
     EQ_PRESETS,
