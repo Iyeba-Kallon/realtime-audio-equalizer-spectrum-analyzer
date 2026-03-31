@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "speqtr"
+version = "0.1.0"
+authors = [
+  { name="Iyeba Kallon" },
+]
+description = "Professional-grade, high-fidelity real-time audio equalizer and spectrum analyzer"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+    "Topic :: Multimedia :: Sound/Audio :: Editors",
+]
+dependencies = [
+    "numpy",
+    "scipy",
+    "sounddevice",
+    "matplotlib",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Iyeba-Kallon/realtime-audio-equalizer-spectrum-analyzer"
+"Bug Tracker" = "https://github.com/Iyeba-Kallon/realtime-audio-equalizer-spectrum-analyzer/issues"
+
+[project.scripts]
+speqtr = "speqtr.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["speqtr*"]
