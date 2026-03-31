@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/speqtr/__init__.py
+src/speqtr/__main__.py
+src/speqtr/audio_engine.py
+src/speqtr/constants.py
+src/speqtr/dsp.py
+src/speqtr/gui.py
+src/speqtr/main.py
+src/speqtr.egg-info/PKG-INFO
+src/speqtr.egg-info/SOURCES.txt
+src/speqtr.egg-info/dependency_links.txt
+src/speqtr.egg-info/entry_points.txt
+src/speqtr.egg-info/requires.txt
+src/speqtr.egg-info/top_level.txt
