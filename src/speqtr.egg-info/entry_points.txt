@@ -1,0 +1,2 @@
+[console_scripts]
+speqtr = speqtr.main:main
