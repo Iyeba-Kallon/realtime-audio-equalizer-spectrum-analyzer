@@ -1,8 +1,12 @@
 # Real-time Audio Equalizer & Spectrum Analyzer
 
+## Installation
+```bash
+pip install speqtr
+```
+
 A professional-grade, high-fidelity audio analysis and equalization tool built with Python. This application captures real-time audio input, processes it through a 10-band peaking equalizer, and provides live visualizations of both the waveform and frequency spectrum.
 
-![App Preview](https://via.placeholder.com/800x600?text=Equalizer+App+Interface) <!-- Replace with actual screenshot when available -->
 
 ## ✨ Features
 
@@ -31,6 +35,12 @@ You'll need Python installed. It is recommended to use a virtual environment.
 
 ### Installation
 
+#### Method 1: Via Pip (Recommended)
+```bash
+pip install speqtr
+```
+
+#### Method 2: Manual Clone (Development)
 1. **Clone the repository**:
    ```bash
    git clone https://github.com/Iyeba-Kallon/realtime-audio-equalizer-spectrum-analyzer.git
