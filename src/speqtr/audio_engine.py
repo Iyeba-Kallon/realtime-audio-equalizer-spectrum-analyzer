@@ -1,8 +1,8 @@
 import sounddevice as sd
 import numpy as np
 import threading
-from constants import SAMPLE_RATE, CHUNK_SIZE, CHANNELS, EQ_BANDS, Q_FACTOR
-from dsp import DSP
+from speqtr.constants import SAMPLE_RATE, CHUNK_SIZE, CHANNELS, EQ_BANDS, Q_FACTOR
+from speqtr.dsp import DSP
 
 
 class AudioEngine:
