@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "speqtr"
 version = "0.1.0"
 authors = [
-  { name="Iyeba Kallon" },
+  { name="Iyeba Kallon", email="iyebalphakallon@gmail.com" },
 ]
 description = "Professional-grade, high-fidelity real-time audio equalizer and spectrum analyzer"
 readme = "README.md"

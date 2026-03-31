@@ -1,13 +1,12 @@
-import pyaudio
+import sounddevice as sd
 import numpy as np
 import threading
-from .constants import SAMPLE_RATE, CHUNK_SIZE, CHANNELS, EQ_BANDS, Q_FACTOR
-from .dsp import DSP
+from constants import SAMPLE_RATE, CHUNK_SIZE, CHANNELS, EQ_BANDS, Q_FACTOR
+from dsp import DSP
 
 
 class AudioEngine:
     def __init__(self):
-        self.p = pyaudio.PyAudio()
         self.stream = None
         self.dsp = DSP()
         self.is_running = False
@@ -24,44 +23,39 @@ class AudioEngine:
     # ------------------------------------------------------------------
 
     def start_stream(self):
-        if self.stream is not None and self.stream.is_active():
+        if self.stream is not None and self.stream.active:
             return
 
-        self.stream = self.p.open(
-            format=pyaudio.paInt16,
+        self.stream = sd.InputStream(
+            samplerate=SAMPLE_RATE,
             channels=CHANNELS,
-            rate=SAMPLE_RATE,
-            input=True,
-            frames_per_buffer=CHUNK_SIZE,
-            stream_callback=self._audio_callback,
+            blocksize=CHUNK_SIZE,
+            dtype='int16',
+            callback=self._audio_callback,
         )
         self.is_running = True
-        self.stream.start_stream()
+        self.stream.start()
 
     def stop_stream(self):
         self.is_running = False
         if self.stream is not None:
-            self.stream.stop_stream()
+            self.stream.stop()
             self.stream.close()
             self.stream = None
 
     def close(self):
         self.stop_stream()
-        self.p.terminate()
 
     # ------------------------------------------------------------------
-    # Audio callback (runs on PyAudio's internal thread)
+    # Audio callback (runs on sounddevice's internal thread)
     # ------------------------------------------------------------------
 
-    def _audio_callback(self, in_data, frame_count, time_info, status):
-        raw = np.frombuffer(in_data, dtype=np.int16)
+    def _audio_callback(self, indata, frames, time, status):
+        raw = indata[:, 0]
         processed = self.dsp.process_audio(raw)          # normalised float32
 
         with self._lock:
             self._audio_data = processed
-
-        # Input-only stream — return value is required but output data is ignored
-        return (in_data, pyaudio.paContinue)
 
     # ------------------------------------------------------------------
     # Data access (called from the GUI / main thread)
